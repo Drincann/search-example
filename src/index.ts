@@ -38,7 +38,7 @@ window.onload = function () {
   const searchInput = document.querySelector('.search__input input') as HTMLInputElement;
   const searchResultList = document.querySelector('.search__dropdown') as HTMLDivElement;
 
-  searchInput.addEventListener('keyup', (e: KeyboardEvent) => {
+  searchInput.addEventListener('keydown', (e: KeyboardEvent) => {
     const searchValue = (e.target as HTMLInputElement).value;
     const searchResult = data
       .map(compared => ({ origin: compared, matched: new Set(longestCommonSubsequence(compared, searchValue,)) }))
