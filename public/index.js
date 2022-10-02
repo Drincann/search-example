@@ -33,7 +33,7 @@ window.onload = function () {
     console.log(data);
     var searchInput = document.querySelector('.search__input input');
     var searchResultList = document.querySelector('.search__dropdown');
-    searchInput.addEventListener('keyup', function (e) {
+    searchInput.addEventListener('input', function (e) {
         var searchValue = e.target.value;
         var searchResult = data
             .map(function (compared) { return ({ origin: compared, matched: new Set(longestCommonSubsequence(compared, searchValue)) }); })
